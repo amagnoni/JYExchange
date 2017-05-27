@@ -460,20 +460,20 @@ Print("START UP")
 
 ### place ultra main tools here
 
-settingsframe = gtk.Frame("Settings")
+settingsframe = gtk.Frame("Настройки:")
 box1.pack_start(settingsframe, False)
 
 settingsbox = gtk.HBox(False)
 settingsframe.add(settingsbox)
 
-ticks_frame = gtk.Frame("Server Tick")
+ticks_frame = gtk.Frame("Скорость сервера")
 settingsbox.pack_start(ticks_frame, False)
 
 tickbox = gtk.HBox(False)
 ticks_frame.add(tickbox)
 
-tickl1 = gtk.Label("Each")
-tickl2 = gtk.Label("ms")
+tickl1 = gtk.Label("Каждые")
+tickl2 = gtk.Label("мс")
 
 tickbox.pack_start(tickl1, False)
 
@@ -496,20 +496,20 @@ tickbox.pack_start(ticksbutton)
 
 tickbox.pack_end(tickl2, False)
 
-updateframe = gtk.Frame("Local Update")
+updateframe = gtk.Frame("Локальное обновление")
 settingsbox.pack_end(updateframe, False)
 
 updatebox = gtk.HBox(False)
 updateframe.add(updatebox)
 
-updatelabel = gtk.Label("Version :"+str(VERSION)+" Avalable: Non ")
+updatelabel = gtk.Label("Версия :"+str(VERSION)+" Обновить до: Нет данных ")
 updatebox.pack_start(updatelabel, False)
 
 update = gtk.Button()
 
 updateicon = gtk.Image()
 updateicon.set_from_file("py_data/icons/save.png")
-updateblabel = gtk.Label("Update")
+updateblabel = gtk.Label("Обновить")
 
 updatebuttonbox = gtk.HBox()
 updatebuttonbox.pack_start(updateicon, False)
@@ -517,7 +517,7 @@ updatebuttonbox.pack_start(updateblabel, False)
 
 update.add(updatebuttonbox)
 
-update.set_tooltip_text("Dowloading Avalable Version and updates to it\nRequire restart of the programm")
+update.set_tooltip_text("Скачать и обновить программу с второго компьютера\nНужен перезапуск")
 update.set_sensitive(False)
 updatebox.pack_start(update, False)
 
@@ -527,7 +527,7 @@ box1.pack_start(bigbox)
 serverbox = gtk.VBox(False)
 bigbox.pack1(serverbox, True, False)
 
-serverframe = gtk.Frame("Upload")
+serverframe = gtk.Frame("На отправку")
 serverbox.pack_start(serverframe)
 
 upt1box = gtk.VBox(False)
@@ -896,7 +896,7 @@ def addbuttondialogrun(widget):
     
     widget.set_sensitive(False)
     
-    addbuttondialog = gtk.FileChooserDialog("Open..",
+    addbuttondialog = gtk.FileChooserDialog("Открыть..",
                                      None,
                                      gtk.FILE_CHOOSER_ACTION_OPEN,
                                     (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
@@ -923,7 +923,7 @@ addbutton = gtk.Button()
 addbuttonicon = gtk.Image()
 addbuttonicon.set_from_file("py_data/icons/add.png")
 addbutton.add(addbuttonicon)
-addbutton.set_tooltip_text("Add files to send")
+addbutton.set_tooltip_text("Довать файлы на отправку")
 addbutton.connect("clicked", addbuttondialogrun)
 uptools.pack_start(addbutton, False)
 
@@ -936,7 +936,7 @@ def addfolderbuttondialogrun(widget):
     
     widget.set_sensitive(False)
     
-    addfolderbuttondialog = gtk.FileChooserDialog("Folder..",
+    addfolderbuttondialog = gtk.FileChooserDialog("Добавить папку ..",
                                      None,
                                      gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER,
                                     (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
@@ -963,7 +963,7 @@ addfolderbutton = gtk.Button()
 addfolderbuttonicon = gtk.Image()
 addfolderbuttonicon.set_from_file("py_data/icons/folder.png")
 addfolderbutton.add(addfolderbuttonicon)
-addfolderbutton.set_tooltip_text("Add folder to send")
+addfolderbutton.set_tooltip_text("Добавить папку на отправку")
 addfolderbutton.connect("clicked", addfolderbuttondialogrun)
 uptools.pack_start(addfolderbutton, False)
 
@@ -973,11 +973,11 @@ uptools.pack_start(sep1, False)
 
 # PASSWORD FIELD
 
-uppasswordlabel = gtk.Label(" Password:")
+uppasswordlabel = gtk.Label(" Пароль:")
 uptools.pack_start(uppasswordlabel, False)
 
 uppassword = gtk.Entry()
-uppassword.set_tooltip_text("Set Password")
+uppassword.set_tooltip_text("Поставить пароль")
 uppassword.set_visibility(False)
 uptools.pack_start(uppassword, False)
 
@@ -993,7 +993,7 @@ uppasswodbutton = gtk.Button()
 uppasswodbuttonicon = gtk.Image()
 uppasswodbuttonicon.set_from_file("py_data/icons/stock_lock.png")
 uppasswodbutton.add(uppasswodbuttonicon)
-uppasswodbutton.set_tooltip_text("See Password")
+uppasswodbutton.set_tooltip_text("Увидеть пароль")
 uppasswodbutton.connect("clicked", seeuppassword)
 uptools.pack_start(uppasswodbutton, False)
 
@@ -1015,7 +1015,7 @@ clearupbutton = gtk.Button()
 clearupbuttonicon = gtk.Image()
 clearupbuttonicon.set_from_file("py_data/icons/edit-delete.png")
 clearupbutton.add(clearupbuttonicon)
-clearupbutton.set_tooltip_text("Clear")
+clearupbutton.set_tooltip_text("Очистить")
 clearupbutton.connect("clicked", clearupfiles)
 uptools.pack_end(clearupbutton, False)
 
@@ -1545,7 +1545,7 @@ uprefresh.add(uprefreshicon)
 
 #uprefresh.set_sensitive(False) # needed to know OMG
 
-uprefresh.set_tooltip_text("Connect")
+uprefresh.set_tooltip_text("Подключится")
 uprefresh.connect("clicked", ONuprefresh)
 cNET.pack_end(uprefresh, False)
 
@@ -1621,7 +1621,7 @@ dfolbox = gtk.HBox(False)
 dtoolsvbox.pack_start(dfolbox, False)
 
 
-dfollabel = gtk.Label("To Folder:")
+dfollabel = gtk.Label("В папку...")
 dfolbox.pack_start(dfollabel, False)
 
 
@@ -1630,7 +1630,7 @@ def chosedownloadfolderdialog(widget):
     
     chosedfolder.set_sensitive(False)
     
-    addfolderbuttondialog = gtk.FileChooserDialog("Folder..",
+    addfolderbuttondialog = gtk.FileChooserDialog("Папка..",
                                      None,
                                      gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER,
                                     (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
@@ -1657,7 +1657,7 @@ chosedfolder = gtk.Button()
 chosedfoldericon = gtk.Image()
 chosedfoldericon.set_from_file("py_data/icons/folder.png")
 chosedfolder.add(chosedfoldericon)
-chosedfolder.set_tooltip_text("Choose Download Folder")
+chosedfolder.set_tooltip_text("Выбрать папку для скачки")
 chosedfolder.connect("clicked", chosedownloadfolderdialog)
 dfolbox.pack_start(chosedfolder, False)
 
@@ -1672,11 +1672,11 @@ dtoolsvbox.pack_end(dpassbox, False)
 
 # PASSWORD FIELD
 
-dpasswordlabel = gtk.Label(" Password:")
+dpasswordlabel = gtk.Label(" Пароль:")
 dpassbox.pack_start(dpasswordlabel, False)
 
 dpassword = gtk.Entry()
-dpassword.set_tooltip_text("Download Password")
+dpassword.set_tooltip_text("Пароль скачки")
 dpassword.set_visibility(False)
 dpassbox.pack_start(dpassword, False)
 
@@ -1692,7 +1692,7 @@ dpasswodbutton = gtk.Button()
 dpasswodbuttonicon = gtk.Image()
 dpasswodbuttonicon.set_from_file("py_data/icons/stock_lock.png")
 dpasswodbutton.add(dpasswodbuttonicon)
-dpasswodbutton.set_tooltip_text("See Password")
+dpasswodbutton.set_tooltip_text("Увидеть пароль")
 dpasswodbutton.connect("clicked", seedpassword)
 dpassbox.pack_start(dpasswodbutton, False)
 
